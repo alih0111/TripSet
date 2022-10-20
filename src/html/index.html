@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
 </head>
 
-<body>
+<body class="bg-[#f2f2f2]">
   <!-- navBar starts -->
   <nav class="h-14 w-full bg-white border-b border_style shadow-lg">
     <section class="container flex h-full justify-between items-center">
@@ -183,7 +183,7 @@
   <!-- main start -->
   <main class="pt-4">
     <!-- swiper slider -->
-    <div class="container grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="container mb-10  grid grid-cols-1 sm:grid-cols-3 gap-4">
       <!-- main inner start -->
       <div class="relative w-full pt-md sm:col-span-2  top_swiper_container">
         <div class="absolute inset-0  overflow-hidden rounded-2xl">
@@ -199,7 +199,7 @@
         </div>
         <div class="swiper-button-next top_swiper_next"></div>
         <div class="swiper-button-prev top_swiper_prev"></div>
-      </div> 
+      </div>
       <!-- banner -->
       <div class="grid grid-cols-2 sm:grid-cols-1 gap-4">
         <a href="#" class="aspect-video rounded-2xl overflow-hidden">
@@ -209,6 +209,283 @@
         </a>
       </div>
     </div>
+
+    <!-- place to visit -->
+    <div class="grid container grid-cols-1 lg:grid-cols-4 lg:gap-4 mb-10">
+      <!-- title -->
+      <div class="flex justify-between items-end px-4">
+        <div
+          class="flex flex-col lg:justify-center lg:items-center font-medium title-color gap-1 lg:gap-4 lg:w-full lg:h-full">
+          <h3 class="text-base lg:text-2xl">مکان های دیدنی</h3>
+          <h3 class="text-sm lg:text-xl">تور های تفریحی</h3>
+          <img src="../utilites/img/travel-icon.svg" class="hidden lg:block w-14 h-14 text-slate-600" alt="travel-icon">
+        </div>
+        <a href="#" class="flex lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </a>
+      </div>
+      <!-- slides -->
+      <div class="lg:col-span-3">
+        <div class="swiper places_to_visit">
+          <div class="swiper-wrapper" style="height: auto;">
+            <div
+              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+              style="width: 20rem;">
+              <div class="w-full relative pt-md ">
+                <img src="../utilites/img/slider1-3.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
+                <div
+                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
+                  20%</div>
+              </div>
+              <!-- info -->
+              <div class="p-4 flex flex-col bg-white">
+                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+                <div class="flex h-12 mb-8 ">
+                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                    آمازون
+                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
+                </div>
+                <a href="#"
+                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
+
+                </a>
+              </div>
+            </div>
+            <div
+              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+              style="width: 20rem;">
+              <div class="w-full relative pt-md ">
+                <img src="../utilites/img/slider1-2.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
+                <div
+                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
+                  20%</div>
+              </div>
+              <!-- info -->
+              <div class="p-4 flex flex-col bg-white">
+                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+                <div class="flex h-12 mb-8 ">
+                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                    آمازون
+                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
+                </div>
+                <a href="#"
+                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
+
+                </a>
+              </div>
+
+            </div>
+            <div
+              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+              style="width: 20rem;">
+              <div class="w-full relative pt-md ">
+                <img src="../utilites/img/slider1-1.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
+                <div
+                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
+                  20%</div>
+              </div>
+              <!-- info -->
+              <div class="p-4 flex flex-col bg-white">
+                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+                <div class="flex h-12 mb-8 ">
+                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                    آمازون
+                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
+                </div>
+                <a href="#"
+                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
+
+                </a>
+              </div>
+
+            </div>
+            <div
+              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+              style="width: 20rem;">
+              <div class="w-full relative pt-md ">
+                <img src="../utilites/img/slider1-4.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
+                <div
+                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
+                  20%</div>
+              </div>
+              <!-- info -->
+              <div class="p-4 flex flex-col bg-white">
+                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+                <div class="flex h-12 mb-8 ">
+                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                    آمازون
+                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
+                </div>
+                <a href="#"
+                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
+
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- most visited -->
+    <div class="container flex flex-col gap-4 px-4 mb-10">
+      <h2 class="text-lg font-medium title-color">مکان های پر بازدید</h2>
+      <!-- cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
+          <!-- img -->
+          <div class="relative w-full pt-md cursor-pointer ">
+            <div class="absolute inset-0  overflow-hidden">
+              <img src="../utilites/img/slider1-2.jpg"
+                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
+            </div>
+            <div
+              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
+              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
+                مطلب</a>
+            </div>
+          </div>
+          <!-- info -->
+          <div class="p-4 flex flex-col">
+            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+            <div class="flex h-12 mb-8 ">
+              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                آمازون
+                می باشد که یکی از عجایب هفتگانه جهان است</h2>
+            </div>
+            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
+          <!-- img -->
+          <div class="relative w-full pt-md cursor-pointer ">
+            <div class="absolute inset-0  overflow-hidden">
+              <img src="../utilites/img/slider1-2.jpg"
+                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
+            </div>
+            <div
+              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
+              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
+                مطلب</a>
+            </div>
+          </div>
+          <!-- info -->
+          <div class="p-4 flex flex-col">
+            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+            <div class="flex h-12 mb-8 ">
+              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                آمازون
+                می باشد که یکی از عجایب هفتگانه جهان است</h2>
+            </div>
+            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
+          <!-- img -->
+          <div class="relative w-full pt-md cursor-pointer ">
+            <div class="absolute inset-0  overflow-hidden">
+              <img src="../utilites/img/slider1-2.jpg"
+                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
+            </div>
+            <div
+              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
+              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
+                مطلب</a>
+            </div>
+          </div>
+          <!-- info -->
+          <div class="p-4 flex flex-col">
+            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
+            <div class="flex h-12 mb-8 ">
+              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
+                آمازون
+                می باشد که یکی از عجایب هفتگانه جهان است</h2>
+            </div>
+            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- next section -->
+    <section class="bg-gray-200 p-4">
+      <div class="bg-white flex flex-col">
+        <!-- title -->
+        <div class="flex-center w-full h-14 border-b border-style text-base title-color font-medium">درخواست سفر
+        </div>
+        <!-- handle use numbers -->
+        <div class="grid grid-cols-1 ">
+          <div class="px-4 py-6 border-b border-style">
+            <h4 class="text-xs font-normal title-color mb-4">تعداد نفرات</h4>
+            <div class="flex w-full gap-4">
+              <div class="flex-1 relative">
+                <input type="radio" name="users"
+                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                  id="radio-one">
+                <label for="radio-one"
+                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">1</label>
+              </div>
+              <div class="flex-1 relative">
+                <input type="radio" name="users"
+                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                  id="radio-two">
+                <label for="radio-two"
+                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">2</label>
+              </div>
+              <div class="flex-1 relative">
+                <input type="radio" name="users"
+                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                  id="radio-three">
+                <label for="radio-three"
+                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">3</label>
+              </div>
+              <div class="flex-1 relative">
+                <input type="radio" name="users"
+                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                  id="radio-four">
+                <label for="radio-four"
+                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">4</label>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-6 border-b border-style">
+            <h4 class="text-xs font-normal title-color mb-4">نفرات دلخواه</h4>
+            <div class="relative w-full">
+              <input type="text" class="w-full h-10 rounded-lg text-sm font-medium title-color border border-style">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <!-- main ends -->
 
@@ -230,6 +507,27 @@
   <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
   <script src="../js/alpinejs.min.js"></script>
   <!-- alpinejs click nav ends -->
+
+  <!-- alpinejs click nav starts -->
+  <script>
+    var places_to_visit = new Swiper(".places_to_visit", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      // breakpoints: {
+      //   300:{
+      //     slidesPerView: 'auto',
+      //   },
+      //   640: {
+      //     slidesPerView: 2,
+      //   },
+      //   1024: {
+      //     slidesPerView: 3,
+      //   }
+      // }
+    })
+  </script>
+  <!-- alpinejs click nav ends -->
+
 </body>
 
 </html>

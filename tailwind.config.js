@@ -1,3 +1,5 @@
+const plugin=require('tailwindcss/plugin')
+
 module.exports = {
   content: ["./src/**/*.html"],
   theme: {
@@ -14,5 +16,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    plugin(function({addVariant}){
+      addVariant('radio-checked','&:checked ~ label')
+    })
+  ],
 };
