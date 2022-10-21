@@ -384,7 +384,7 @@
       <!-- place to visit -->
       <div class="grid container grid-cols-1 lg:grid-cols-4 lg:gap-4 mb-10">
         <!-- title -->
-        <div class="flex justify-between items-end px-4">
+        <div class="flex justify-between items-end">
           <div
             class="flex flex-col lg:justify-center lg:items-center font-medium title-color gap-1 lg:gap-4 lg:w-full lg:h-full"
           >
@@ -414,12 +414,11 @@
           </a>
         </div>
         <!-- slides -->
-        <div class="lg:col-span-3">
+        <div class="lg:col-span-3 places_to_visit_container">
           <div class="swiper places_to_visit">
             <div class="swiper-wrapper" style="height: auto">
               <div
                 class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-                style="width: 20rem"
               >
                 <div class="w-full relative pt-md">
                   <img
@@ -474,7 +473,6 @@
               </div>
               <div
                 class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-                style="width: 20rem"
               >
                 <div class="w-full relative pt-md">
                   <img
@@ -529,7 +527,6 @@
               </div>
               <div
                 class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-                style="width: 20rem"
               >
                 <div class="w-full relative pt-md">
                   <img
@@ -584,7 +581,6 @@
               </div>
               <div
                 class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-                style="width: 20rem"
               >
                 <div class="w-full relative pt-md">
                   <img
@@ -643,7 +639,7 @@
       </div>
 
       <!-- most visited -->
-      <div class="container flex flex-col gap-4 px-4 mb-10">
+      <div class="container flex flex-col gap-4  mb-10">
         <h2 class="text-lg font-medium title-color">مکان های پر بازدید</h2>
         <!-- cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -770,10 +766,10 @@
         </div>
       </div>
 
-      <!-- next section -->
+      <!-- Form -->
       <section class="bg-gray-200 p-4">
         <div
-          class="bg-white flex flex-col rounded-2xl sm:max-w-[34rem] sm:mx-auto"
+          class="bg-white flex flex-col rounded-2xl sm:max-w-[34rem] sm:mx-auto md:max-w-2xl lg:max-w-3xl"
         >
           <!-- title -->
           <div
@@ -796,7 +792,7 @@
                       <input
                         type="radio"
                         name="users"
-                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        class="absolute label-checked:bg-purple-700 label-checked:text-white top-0 right-0 invisible"
                         id="radio-one"
                       />
                       <label
@@ -809,7 +805,7 @@
                       <input
                         type="radio"
                         name="users"
-                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        class="absolute label-checked:bg-purple-700 label-checked:text-white top-0 right-0 invisible"
                         id="radio-two"
                       />
                       <label
@@ -822,7 +818,7 @@
                       <input
                         type="radio"
                         name="users"
-                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        class="absolute label-checked:bg-purple-700 label-checked:text-white top-0 right-0 invisible"
                         id="radio-three"
                       />
                       <label
@@ -835,7 +831,7 @@
                       <input
                         type="radio"
                         name="users"
-                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        class="absolute label-checked:bg-purple-700 label-checked:text-white top-0 right-0 invisible"
                         id="radio-four"
                       />
                       <label
@@ -906,25 +902,25 @@
                 </p>
                 <div class="flex items-center gap-8">
                   <h4 class="text-sm font-medium title-color">جنسیت</h4>
-                  <div class="flex items-center gap-4 cursor-pointer">
+                  <div class="flex items-center gap-4 ">
                     <input
                       type="radio"
-                      class="focus:ring-0 focus:ring-offset-0"
+                      class="focus:ring-0 focus:ring-offset-0 cursor-pointer"
                       name="gender"
                       id="male"
                     />
-                    <label for="male" class="text-sm font-medium title-color"
+                    <label for="male" class="text-sm font-medium title-color cursor-pointer"
                       >آقا</label
                     >
                   </div>
-                  <div class="flex items-center gap-4 cursor-pointer">
+                  <div class="flex items-center gap-4 ">
                     <input
                       type="radio"
-                      class="focus:ring-0 focus:ring-offset-0"
+                      class="focus:ring-0 focus:ring-offset-0 cursor-pointer"
                       name="gender"
                       id="female"
                     />
-                    <label for="female" class="text-sm font-medium title-color"
+                    <label for="female" class="text-sm font-medium title-color cursor-pointer"
                       >خانم</label
                     >
                   </div>
@@ -1075,8 +1071,8 @@
               </button>
             </div>
             <!-- menu layer -->
-            <div 
-            x-on:click="handleCloseMenu()"
+            <div
+              x-on:click="handleCloseMenu()"
               class="fixed inset-0 bg-gray-900 bg-opacity-50 z-10"
               x-show="openMenu"
               x-cloak
@@ -1087,6 +1083,304 @@
               x-transition:leave-start="opacity-100 "
               x-transition:leave-end="opacity-0 "
             ></div>
+            <!-- menu part -->
+            <div
+              class="fixed inset-0 z-20 flex-center"
+              x-show="openMenu"
+              x-cloak
+              x-transition:enter="transition-all ease-out duration-300"
+              x-transition:enter-start="top-96 "
+              x-transition:enter-end="top-0 "
+              x-transition:leave="transition-all ease-in duration-300"
+              x-transition:leave-start="top-0 "
+              x-transition:leave-end="top-96 "
+            >
+              <div
+                class="bg-white rounded-2xl max-w-xs w-full"
+                x-on:click.away="cancelMenu()"
+              >
+                <!-- modal title -->
+                <div
+                  class="w-full h-12 title-color text-base font-medium flex-center"
+                >
+                  ویژگی های سفرتان را انتخاب کنید
+                </div>
+                <!-- modal list -->
+                <ul class="flex flex-col list-none">
+                  <li
+                    class="even:bg-white odd:bg-gray-100 w-full h-12 flex items-center justify-between px-4"
+                  >
+                    <!-- title -->
+                    <div class="">
+                      <h3 class="title-color text-sm font-medium">غذا</h3>
+                    </div>
+                    <!-- choices -->
+                    <ul class="flex items-center list-none gap-2">
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-purple-700 label-checked:text-white transition-colors top-0 right-0"
+                          name="food"
+                          id="breakfast"
+                        />
+                        <label
+                          for="breakfast"
+                          class="text-sm font-medium text-purple-700 border border-purple-700 cursor-pointer px-2 py-1 rounded-lg"
+                          >صبحانه</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-purple-700 label-checked:text-white transition-colors top-0 right-0"
+                          name="food"
+                          id="lunch"
+                        />
+                        <label
+                          for="lunch"
+                          class="text-sm font-medium text-purple-700 border border-purple-700 cursor-pointer px-2 py-1 rounded-lg"
+                          >ناهار</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-purple-700 label-checked:text-white transition-colors top-0 right-0"
+                          name="food"
+                          id="dinner"
+                        />
+                        <label
+                          for="dinner"
+                          class="text-sm font-medium text-purple-700 border border-purple-700 cursor-pointer px-2 py-1 rounded-lg"
+                          >شام</label
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="even:bg-white odd:bg-gray-100 w-full h-12 flex items-center justify-between px-4"
+                  >
+                    <!-- title -->
+                    <div class="">
+                      <h3 class="title-color text-sm font-medium">
+                        مکان های دیدنی
+                      </h3>
+                    </div>
+                    <!-- choices -->
+                    <ul class="flex items-center list-none gap-2">
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-green-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="places"
+                          id="historical"
+                        />
+                        <label
+                          for="historical"
+                          class="text-sm font-medium text-green-500 border border-green-500 cursor-pointer px-2 py-1 rounded-lg"
+                          >تاریخی</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-green-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="places"
+                          id="sport"
+                        />
+                        <label
+                          for="sport"
+                          class="text-sm font-medium text-green-500 border border-green-500 cursor-pointer px-2 py-1 rounded-lg"
+                          >ورزشی</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="checkbox"
+                          class="absolute invisible label-checked:bg-green-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="places"
+                          id="play"
+                        />
+                        <label
+                          for="play"
+                          class="text-sm font-medium text-green-500 border border-green-500 cursor-pointer px-2 py-1 rounded-lg"
+                          >تفریحی</label
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- hotel -->
+                  <li
+                    class="even:bg-white odd:bg-gray-100 w-full h-12 flex items-center justify-between px-4"
+                  >
+                    <!-- title -->
+                    <div class="">
+                      <h3 class="title-color text-sm font-medium">
+                        هتل (ستاره)
+                      </h3>
+                    </div>
+                    <!-- choices -->
+                    <ul class="flex items-center list-none gap-2">
+                      <li class="relative">
+                        <input
+                          type="radio"
+                          class="absolute invisible label-checked:bg-yellow-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="hotel"
+                          id="five-star"
+                        />
+                        <label
+                          for="five-star"
+                          class="text-sm font-medium text-yellow-700 border border-yellow-500 cursor-pointer w-12 flex justify-center items-center py-1 rounded-lg"
+                          >پنج</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="radio"
+                          class="absolute invisible label-checked:bg-yellow-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="hotel"
+                          id="four-star"
+                        />
+                        <label
+                          for="four-star"
+                          class="text-sm font-medium text-yellow-700 border border-yellow-500 cursor-pointer w-12 flex justify-center items-center py-1 rounded-lg"
+                          >چهار</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="radio"
+                          class="absolute invisible label-checked:bg-yellow-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="hotel"
+                          id="three-star"
+                        />
+                        <label
+                          for="three-star"
+                          class="text-sm font-medium text-yellow-700 border border-yellow-500 cursor-pointer w-12 flex justify-center items-center py-1 rounded-lg"
+                          >سه</label
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- slider -->
+                  <li
+                    class="even:bg-white odd:bg-gray-100 w-full h-12 flex items-center justify-between px-4"
+                  >
+                    <!-- title -->
+                    <div class="">
+                      <h3 class="title-color text-sm font-medium">انتقال</h3>
+                    </div>
+                    <!-- choices -->
+                    <div>
+                      <div
+                        class="flex items-center border border-purple-700 w-40 h-8 rounded-2xl relative"
+                      >
+                        <div
+                          x-on:click="groundSlider()"
+                          x-bind:class="sliderTab?'text-white font-medium':'text-gray-700 font-normal cursor-pointer'"
+                          class="flex-1 flex-center transition-all text-sm z-10"
+                        >
+                          زمینی
+                        </div>
+                        <div
+                          x-on:click="airSlider()"
+                          x-bind:class="!sliderTab?'text-white font-medium':'text-gray-700 font-normal cursor-pointer'"
+                          class="flex-1 flex-center transition-all text-sm z-10"
+                        >
+                          هوایی
+                        </div>
+                        <input
+                          type="radio"
+                          name="transfer"
+                          id="transfer"
+                          class="absolute top-0 right-0 invisible"
+                        />
+                        <label
+                          for="transfer"
+                          x-bind:class="sliderTab?'right-1/2':'right-0'"
+                          class="transition-all absolute w-1/2 h-full top-0 bg-purple-700 rounded-2xl"
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- transfer method -->
+                  <li
+                    class="even:bg-white odd:bg-gray-100 w-full h-12 flex items-center justify-between px-4"
+                  >
+                    <!-- title -->
+                    <div class="">
+                      <h3 class="title-color text-sm font-medium">
+                        روش انتقال
+                      </h3>
+                    </div>
+                    <!-- choices -->
+                    <ul class="flex items-center list-none gap-2">
+                      <li class="relative">
+                        <input
+                          type="radio"
+                          class="absolute invisible label-checked:bg-red-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="transfer-method"
+                          id="bus-method"
+                        />
+                        <label
+                          for="bus-method"
+                          class="text-sm font-medium text-red-700 border border-red-500 cursor-pointer w-12 flex justify-center items-center py-1 rounded-lg"
+                          >اتوبوس</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          type="radio"
+                          class="absolute invisible label-checked:bg-red-500 label-checked:text-white transition-colors top-0 right-0"
+                          name="transfer-method"
+                          id="train-method"
+                        />
+                        <label
+                          for="train-method"
+                          class="text-sm font-medium text-red-700 border border-red-500 cursor-pointer w-12 flex justify-center items-center py-1 rounded-lg"
+                          >چهار</label
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <!-- submit button -->
+                <div class="px-4 py-2">
+                  <button
+                    x-on:click="handleCloseMenu()"
+                    class="w-full h-12 rounded-full bg-red-500 text-lg text-white font-medium"
+                  >
+                    اعمال
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- tooltip -->
+            <div
+              class="fixed top-12 left-8 z-30"
+              x-cloak
+              x-show="tooltip"
+              x-transition:enter="transition-all ease-out "
+              x-transition:enter-start="-left-40 "
+              x-transition:enter-end="left-8 "
+              x-transition:leave="transition-all ease-in"
+              x-transition:leave-start="left-8 "
+              x-transition:leave-end="-left-40 "
+            >
+              <div class="flex flex-col rounded-xl overflow-hidden">
+                <div
+                  class="bg-green-500 py-8 px-6 text-white text-lg font-medium"
+                >
+                  اطلاعات دریافت شد
+                </div>
+                <!-- progress bar -->
+                <div class="relative w-full h-2 bg-red-200">
+                  <div
+                    class="absolute h-full left-0 bg-red-500 progressbar"
+                  ></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1140,6 +1434,9 @@
         return {
           goNext: false,
           openMenu: false,
+          sliderTab: false,
+          tooltip: false,
+          step: 100,
           handleOpenMenu() {
             this.goNext = true;
             setTimeout(() => {
@@ -1147,8 +1444,32 @@
             }, 2000);
           },
           handleCloseMenu() {
+            this.tooltip = true;
+            document.querySelector(
+              ".progressbar"
+            ).style.width = `${this.step}%`;
+            let progress = setInterval(() => {
+              this.step -= 1;
+              document.querySelector(
+                ".progressbar"
+              ).style.width = `${this.step}%`;
+              if (this.step == 0) {
+                this.tooltip = false;
+                this.goNext = false;
+                this.openMenu = false;
+                clearInterval(progress);
+              }
+            }, 20);
+          },
+          cancelMenu() {
             this.goNext = false;
             this.openMenu = false;
+          },
+          groundSlider() {
+            this.sliderTab = true;
+          },
+          airSlider() {
+            this.sliderTab = false;
           },
         };
       }

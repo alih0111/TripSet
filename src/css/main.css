@@ -67,3 +67,9 @@ html {
 .top_swiper_container .top_swiper_prev {
   @apply -left-3;
 }
+.places_to_visit_container .places_to_visit{
+  @apply py-4;
+}
+.places_to_visit_container .places_to_visit .swiper-wrapper .swiper-slide{
+  @apply w-80
+}
