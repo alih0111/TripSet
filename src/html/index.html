@@ -1,533 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/build/tailwind.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="./build/tailwind.css" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="../../public/build/tailwind.css" />
-  <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
-</head>
-
-<body class="bg-[#f2f2f2]">
-  <!-- navBar starts -->
-  <nav class="h-14 w-full bg-white border-b border_style shadow-lg">
-    <section class="container flex h-full justify-between items-center">
-      <!-- Hamberger menu -->
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6 sm:hidden">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-        <ul class="hidden sm:flex items-center gap-4">
-          <li>
-            <a href="#" class="title-color text-sm font-medium">خانه</a>
-          </li>
-          <!-- inside tour -->
-          <li class="relative" x-data="{open: false}" x-on:click.away="open=false">
-            <div class="flex items-center gap-2 cursor-pointer" x-on:click="open=true">
-              <span class="title-color text-sm font-medium">تور های داخلی</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-4 h-4 custom-transition" x-bind:class="{'rotate-180': open}">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </div>
-            <ul class="flex flex-col list-none absolute left-0 top-8 bg-white rounded-lg w-40 z-10 border border-style"
-              x-show="open" x-cloak x-transition.duration.300ms>
-              <li>
-                <a href="#" class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">تور
-                  کیش</a>
-              </li>
-              <li class="relative group">
-                <a href="#"
-                  class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition">
-                  <span>تور کوهنوردی</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </a>
-                <ul
-                  class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style">
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">رشته کوه
-                      البرز</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">رشته کوه
-                      زاگرس</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">رشته کوه
-                      دماوند</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">تور
-                  قشم</a>
-              </li>
-              <li>
-                <a href="#" class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">تور
-                  اصفهان</a>
-              </li>
-            </ul>
-          </li>
-          <!-- outside tour -->
-          <li class="relative" x-data="{open: false}" x-on:click.away="open=false">
-            <div class="flex items-center gap-2 cursor-pointer" x-on:click="open=true">
-              <span class="title-color text-sm font-medium">تور های خارجی</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-4 h-4 custom-transition" x-bind:class="{'rotate-180': open}">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </div>
-            <ul class="flex flex-col list-none absolute left-0 top-8 bg-white rounded-lg w-40 z-10 border border-style"
-              x-show="open" x-cloak x-transition.duration.300ms>
-              <li>
-                <a href="#" class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">تور
-                  آنتالیا</a>
-              </li>
-              <li class="relative group">
-                <a href="#"
-                  class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition">
-                  <span>تور قاره ای</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </a>
-                <ul
-                  class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style">
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">اروپا</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">آمریکا</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">آفریقا</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">تور
-                  چین</a>
-              </li>
-              <li class="relative group">
-                <a href="#"
-                  class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition">
-                  <span>تور کره</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </a>
-                <ul
-                  class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style">
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">کره
-                      شمالی</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition">کره
-                      جنوبی</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <!-- mag -->
-          <li>
-            <a href="#" class="title-color text-sm font-medium">مجله</a>
-          </li>
-          <!-- proud -->
-          <li>
-            <a href="#" class="title-color text-sm font-medium">افتخارات</a>
-          </li>
-        </ul>
-      </div>
-      <!-- dark mode, direction, user photo -->
-      <div class="flex items-center gap-4 flex-row-reverse">
-        <!-- avatar -->
-        <a href="#">
-          <img src="../utilites/img/avatar.png" class="w-10 h-10 rounded-full" alt="avatar" />
-        </a>
-        <!-- direction -->
-        <div class="w-10 h-10 flex-center rounded-full hover:shadow-lg cursor-pointer custom-transition">
-          <img src="../utilites/img/img-rtl.png" class="w-8 h-8 rounded-full" alt="flag" />
-        </div>
-        <!-- dark light -->
-        <div class="w-10 h-10 flex-center rounded-full hover:shadow-lg cursor-pointer custom-transition">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+  <body class="bg-[#f2f2f2]">
+    <!-- navBar starts -->
+    <nav class="h-14 w-full bg-white border-b border_style shadow-lg">
+      <section class="container flex h-full justify-between items-center">
+        <!-- Hamberger menu -->
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 sm:hidden"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
           </svg>
+          <ul class="hidden sm:flex items-center gap-4">
+            <li>
+              <a href="#" class="title-color text-sm font-medium">خانه</a>
+            </li>
+            <!-- inside tour -->
+            <li
+              class="relative"
+              x-data="{open: false}"
+              x-on:click.away="open=false"
+            >
+              <div
+                class="flex items-center gap-2 cursor-pointer"
+                x-on:click="open=true"
+              >
+                <span class="title-color text-sm font-medium"
+                  >تور های داخلی</span
+                >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 custom-transition"
+                  x-bind:class="{'rotate-180': open}"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <ul
+                class="flex flex-col list-none absolute left-0 top-8 bg-white rounded-lg w-40 z-10 border border-style"
+                x-show="open"
+                x-cloak
+                x-transition.duration.300ms
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                    >تور کیش</a
+                  >
+                </li>
+                <li class="relative group">
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition"
+                  >
+                    <span>تور کوهنوردی</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </a>
+                  <ul
+                    class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >رشته کوه البرز</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >رشته کوه زاگرس</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >رشته کوه دماوند</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                    >تور قشم</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                    >تور اصفهان</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <!-- outside tour -->
+            <li
+              class="relative"
+              x-data="{open: false}"
+              x-on:click.away="open=false"
+            >
+              <div
+                class="flex items-center gap-2 cursor-pointer"
+                x-on:click="open=true"
+              >
+                <span class="title-color text-sm font-medium"
+                  >تور های خارجی</span
+                >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 custom-transition"
+                  x-bind:class="{'rotate-180': open}"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <ul
+                class="flex flex-col list-none absolute left-0 top-8 bg-white rounded-lg w-40 z-10 border border-style"
+                x-show="open"
+                x-cloak
+                x-transition.duration.300ms
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                    >تور آنتالیا</a
+                  >
+                </li>
+                <li class="relative group">
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition"
+                  >
+                    <span>تور قاره ای</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </a>
+                  <ul
+                    class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >اروپا</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >آمریکا</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >آفریقا</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                    >تور چین</a
+                  >
+                </li>
+                <li class="relative group">
+                  <a
+                    href="#"
+                    class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 justify-between items-center custom-transition"
+                  >
+                    <span>تور کره</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </a>
+                  <ul
+                    class="group-hover:flex hidden list-none flex-col absolute top-0 left-full rounded-lg bg-white w-40 overflow-hidden border border-style"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >کره شمالی</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex p-2 text-sm font-medium text-gray-700 hover:bg-gray-100 custom-transition"
+                        >کره جنوبی</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- mag -->
+            <li>
+              <a href="#" class="title-color text-sm font-medium">مجله</a>
+            </li>
+            <!-- proud -->
+            <li>
+              <a href="#" class="title-color text-sm font-medium">افتخارات</a>
+            </li>
+          </ul>
+        </div>
+        <!-- dark mode, direction, user photo -->
+        <div class="flex items-center gap-4 flex-row-reverse">
+          <!-- avatar -->
+          <a href="#">
+            <img
+              src="../utilites/img/avatar.png"
+              class="w-10 h-10 rounded-full"
+              alt="avatar"
+            />
+          </a>
+          <!-- direction -->
+          <div
+            class="w-10 h-10 flex-center rounded-full hover:shadow-lg cursor-pointer custom-transition"
+          >
+            <img
+              src="../utilites/img/img-rtl.png"
+              class="w-8 h-8 rounded-full"
+              alt="flag"
+            />
+          </div>
+          <!-- dark light -->
+          <div
+            class="w-10 h-10 flex-center rounded-full hover:shadow-lg cursor-pointer custom-transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </nav>
+    <!-- navBar ends -->
+
+    <!-- main start -->
+    <main class="pt-4">
+      <!-- swiper slider -->
+      <div class="container mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- main inner start -->
+        <div class="relative w-full pt-md sm:col-span-2 top_swiper_container">
+          <div class="absolute inset-0 overflow-hidden rounded-2xl">
+            <div class="swiper top_swiper w-full">
+              <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"
+                  ><img
+                    src="../utilites/img/slider1-2.jpg"
+                    class="w-full h-ful"
+                    alt="slide1" /></a
+                ><a href="#" class="swiper-slide"
+                  ><img
+                    src="../utilites/img/slider1-3.jpg"
+                    class="w-full h-ful"
+                    alt="slide1" /></a
+                ><a href="#" class="swiper-slide"
+                  ><img
+                    src="../utilites/img/slider1-4.jpg"
+                    class="w-full h-ful"
+                    alt="slide1"
+                /></a>
+              </div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          </div>
+          <div class="swiper-button-next top_swiper_next"></div>
+          <div class="swiper-button-prev top_swiper_prev"></div>
+        </div>
+        <!-- banner -->
+        <div class="grid grid-cols-2 sm:grid-cols-1 gap-4">
+          <a href="#" class="aspect-video rounded-2xl overflow-hidden">
+            <img
+              src="../utilites/img/slider1-3.jpg"
+              class="w-full h-full"
+              alt="slide-banner1"
+            /> </a
+          ><a href="#" class="aspect-video rounded-2xl overflow-hidden">
+            <img
+              src="../utilites/img/slider1-4.jpg"
+              class="w-full h-full"
+              alt="slide-banner2"
+            />
+          </a>
         </div>
       </div>
-    </section>
-  </nav>
-  <!-- navBar ends -->
 
-  <!-- main start -->
-  <main class="pt-4">
-    <!-- swiper slider -->
-    <div class="container mb-10  grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <!-- main inner start -->
-      <div class="relative w-full pt-md sm:col-span-2  top_swiper_container">
-        <div class="absolute inset-0  overflow-hidden rounded-2xl">
-          <div class="swiper top_swiper w-full">
-            <div class="swiper-wrapper">
-              <a href="#" class="swiper-slide"><img src="../utilites/img/slider1-2.jpg" class="w-full h-ful"
-                  alt="slide1" /></a><a href="#" class="swiper-slide"><img src="../utilites/img/slider1-3.jpg"
-                  class="w-full h-ful" alt="slide1" /></a><a href="#" class="swiper-slide"><img
-                  src="../utilites/img/slider1-4.jpg" class="w-full h-ful" alt="slide1" /></a>
-            </div>
-            <!-- <div class="swiper-pagination"></div> -->
-          </div>
-        </div>
-        <div class="swiper-button-next top_swiper_next"></div>
-        <div class="swiper-button-prev top_swiper_prev"></div>
-      </div>
-      <!-- banner -->
-      <div class="grid grid-cols-2 sm:grid-cols-1 gap-4">
-        <a href="#" class="aspect-video rounded-2xl overflow-hidden">
-          <img src="../utilites/img/slider1-3.jpg" class="w-full h-full" alt="slide-banner1" /> </a><a href="#"
-          class="aspect-video rounded-2xl overflow-hidden">
-          <img src="../utilites/img/slider1-4.jpg" class="w-full h-full" alt="slide-banner2" />
-        </a>
-      </div>
-    </div>
-
-    <!-- place to visit -->
-    <div class="grid container grid-cols-1 lg:grid-cols-4 lg:gap-4 mb-10">
-      <!-- title -->
-      <div class="flex justify-between items-end px-4">
-        <div
-          class="flex flex-col lg:justify-center lg:items-center font-medium title-color gap-1 lg:gap-4 lg:w-full lg:h-full">
-          <h3 class="text-base lg:text-2xl">مکان های دیدنی</h3>
-          <h3 class="text-sm lg:text-xl">تور های تفریحی</h3>
-          <img src="../utilites/img/travel-icon.svg" class="hidden lg:block w-14 h-14 text-slate-600" alt="travel-icon">
-        </div>
-        <a href="#" class="flex lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </a>
-      </div>
-      <!-- slides -->
-      <div class="lg:col-span-3">
-        <div class="swiper places_to_visit">
-          <div class="swiper-wrapper" style="height: auto;">
-            <div
-              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-              style="width: 20rem;">
-              <div class="w-full relative pt-md ">
-                <img src="../utilites/img/slider1-3.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
-                <div
-                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
-                  20%</div>
-              </div>
-              <!-- info -->
-              <div class="p-4 flex flex-col bg-white">
-                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-                <div class="flex h-12 mb-8 ">
-                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                    آمازون
-                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
-                </div>
-                <a href="#"
-                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 ">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
-                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
-
-                </a>
-              </div>
-            </div>
-            <div
-              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-              style="width: 20rem;">
-              <div class="w-full relative pt-md ">
-                <img src="../utilites/img/slider1-2.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
-                <div
-                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
-                  20%</div>
-              </div>
-              <!-- info -->
-              <div class="p-4 flex flex-col bg-white">
-                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-                <div class="flex h-12 mb-8 ">
-                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                    آمازون
-                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
-                </div>
-                <a href="#"
-                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 ">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
-                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
-
-                </a>
-              </div>
-
-            </div>
-            <div
-              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-              style="width: 20rem;">
-              <div class="w-full relative pt-md ">
-                <img src="../utilites/img/slider1-1.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
-                <div
-                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
-                  20%</div>
-              </div>
-              <!-- info -->
-              <div class="p-4 flex flex-col bg-white">
-                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-                <div class="flex h-12 mb-8 ">
-                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                    آمازون
-                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
-                </div>
-                <a href="#"
-                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 ">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
-                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
-
-                </a>
-              </div>
-
-            </div>
-            <div
-              class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
-              style="width: 20rem;">
-              <div class="w-full relative pt-md ">
-                <img src="../utilites/img/slider1-4.jpg" alt="avatar" class="absolute inset-0 w-full h-full">
-                <div
-                  class="absolute group-hover:left-0 custom-transition  -left-8 top-4  w-20 h-10 bg-red-600 text-white text-xs flex items-center  pr-4 rounded-r-xl justify-end">
-                  20%</div>
-              </div>
-              <!-- info -->
-              <div class="p-4 flex flex-col bg-white">
-                <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-                <div class="flex h-12 mb-8 ">
-                  <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                    آمازون
-                    می باشد که یکی از عجایب هفتگانه جهان است</h2>
-                </div>
-                <a href="#"
-                  class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 ">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
-                  <span class="text-base font-medium ">مشاهده عکس های بیشتر</span>
-
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- most visited -->
-    <div class="container flex flex-col gap-4 px-4 mb-10">
-      <h2 class="text-lg font-medium title-color">مکان های پر بازدید</h2>
-      <!-- cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
-          <!-- img -->
-          <div class="relative w-full pt-md cursor-pointer ">
-            <div class="absolute inset-0  overflow-hidden">
-              <img src="../utilites/img/slider1-2.jpg"
-                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
-            </div>
-            <div
-              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
-              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
-                مطلب</a>
-            </div>
-          </div>
-          <!-- info -->
-          <div class="p-4 flex flex-col">
-            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-            <div class="flex h-12 mb-8 ">
-              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                آمازون
-                می باشد که یکی از عجایب هفتگانه جهان است</h2>
-            </div>
-            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
-          </div>
-        </div>
-        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
-          <!-- img -->
-          <div class="relative w-full pt-md cursor-pointer ">
-            <div class="absolute inset-0  overflow-hidden">
-              <img src="../utilites/img/slider1-2.jpg"
-                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
-            </div>
-            <div
-              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
-              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
-                مطلب</a>
-            </div>
-          </div>
-          <!-- info -->
-          <div class="p-4 flex flex-col">
-            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-            <div class="flex h-12 mb-8 ">
-              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                آمازون
-                می باشد که یکی از عجایب هفتگانه جهان است</h2>
-            </div>
-            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
-          </div>
-        </div>
-        <div class="flex flex-col rounded-2xl overflow-hidden shadow-xl group">
-          <!-- img -->
-          <div class="relative w-full pt-md cursor-pointer ">
-            <div class="absolute inset-0  overflow-hidden">
-              <img src="../utilites/img/slider1-2.jpg"
-                class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in" alt="slide">
-            </div>
-            <div
-              class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in">
-              <a href="#" class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium">ادامه
-                مطلب</a>
-            </div>
-          </div>
-          <!-- info -->
-          <div class="p-4 flex flex-col">
-            <h2 class="title-color text-base font-medium mb-4  line-clamp-1">جنگل آمازون</h2>
-            <div class="flex h-12 mb-8 ">
-              <h2 class="title-color text-sm leading-6 font-normal line-clamp-2">تصویری که میبینید مربوط به جنگل های
-                آمازون
-                می باشد که یکی از عجایب هفتگانه جهان است</h2>
-            </div>
-            <a href="#" class="flex text-purple-700 text-lg font-medium">ادامه مطلب ...</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- next section -->
-    <section class="bg-gray-200 p-4">
-      <div class="bg-white flex flex-col">
+      <!-- place to visit -->
+      <div class="grid container grid-cols-1 lg:grid-cols-4 lg:gap-4 mb-10">
         <!-- title -->
-        <div class="flex-center w-full h-14 border-b border-style text-base title-color font-medium">درخواست سفر
-        </div>
-        <!-- handle use numbers -->
-        <div class="grid grid-cols-1 ">
-          <div class="px-4 py-6 border-b border-style">
-            <h4 class="text-xs font-normal title-color mb-4">تعداد نفرات</h4>
-            <div class="flex w-full gap-4">
-              <div class="flex-1 relative">
-                <input type="radio" name="users"
-                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
-                  id="radio-one">
-                <label for="radio-one"
-                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">1</label>
-              </div>
-              <div class="flex-1 relative">
-                <input type="radio" name="users"
-                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
-                  id="radio-two">
-                <label for="radio-two"
-                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">2</label>
-              </div>
-              <div class="flex-1 relative">
-                <input type="radio" name="users"
-                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
-                  id="radio-three">
-                <label for="radio-three"
-                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">3</label>
-              </div>
-              <div class="flex-1 relative">
-                <input type="radio" name="users"
-                  class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
-                  id="radio-four">
-                <label for="radio-four"
-                  class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent">4</label>
-              </div>
-            </div>
+        <div class="flex justify-between items-end px-4">
+          <div
+            class="flex flex-col lg:justify-center lg:items-center font-medium title-color gap-1 lg:gap-4 lg:w-full lg:h-full"
+          >
+            <h3 class="text-base lg:text-2xl">مکان های دیدنی</h3>
+            <h3 class="text-sm lg:text-xl">تور های تفریحی</h3>
+            <img
+              src="../utilites/img/travel-icon.svg"
+              class="hidden lg:block w-14 h-14 text-slate-600"
+              alt="travel-icon"
+            />
           </div>
-          <div class="px-4 py-6 border-b border-style">
-            <h4 class="text-xs font-normal title-color mb-4">نفرات دلخواه</h4>
-            <div class="relative w-full">
-              <input type="text" class="w-full h-10 rounded-lg text-sm font-medium title-color border border-style">
+          <a href="#" class="flex lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </a>
+        </div>
+        <!-- slides -->
+        <div class="lg:col-span-3">
+          <div class="swiper places_to_visit">
+            <div class="swiper-wrapper" style="height: auto">
+              <div
+                class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+                style="width: 20rem"
+              >
+                <div class="w-full relative pt-md">
+                  <img
+                    src="../utilites/img/slider1-3.jpg"
+                    alt="avatar"
+                    class="absolute inset-0 w-full h-full"
+                  />
+                  <div
+                    class="absolute group-hover:left-0 custom-transition -left-8 top-4 w-20 h-10 bg-red-600 text-white text-xs flex items-center pr-4 rounded-r-xl justify-end"
+                  >
+                    20%
+                  </div>
+                </div>
+                <!-- info -->
+                <div class="p-4 flex flex-col bg-white">
+                  <h2
+                    class="title-color text-base font-medium mb-4 line-clamp-1"
+                  >
+                    جنگل آمازون
+                  </h2>
+                  <div class="flex h-12 mb-8">
+                    <h2
+                      class="title-color text-sm leading-6 font-normal line-clamp-2"
+                    >
+                      تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی
+                      از عجایب هفتگانه جهان است
+                    </h2>
+                  </div>
+                  <a
+                    href="#"
+                    class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="text-base font-medium"
+                      >مشاهده عکس های بیشتر</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+                style="width: 20rem"
+              >
+                <div class="w-full relative pt-md">
+                  <img
+                    src="../utilites/img/slider1-2.jpg"
+                    alt="avatar"
+                    class="absolute inset-0 w-full h-full"
+                  />
+                  <div
+                    class="absolute group-hover:left-0 custom-transition -left-8 top-4 w-20 h-10 bg-red-600 text-white text-xs flex items-center pr-4 rounded-r-xl justify-end"
+                  >
+                    20%
+                  </div>
+                </div>
+                <!-- info -->
+                <div class="p-4 flex flex-col bg-white">
+                  <h2
+                    class="title-color text-base font-medium mb-4 line-clamp-1"
+                  >
+                    جنگل آمازون
+                  </h2>
+                  <div class="flex h-12 mb-8">
+                    <h2
+                      class="title-color text-sm leading-6 font-normal line-clamp-2"
+                    >
+                      تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی
+                      از عجایب هفتگانه جهان است
+                    </h2>
+                  </div>
+                  <a
+                    href="#"
+                    class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="text-base font-medium"
+                      >مشاهده عکس های بیشتر</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+                style="width: 20rem"
+              >
+                <div class="w-full relative pt-md">
+                  <img
+                    src="../utilites/img/slider1-1.jpg"
+                    alt="avatar"
+                    class="absolute inset-0 w-full h-full"
+                  />
+                  <div
+                    class="absolute group-hover:left-0 custom-transition -left-8 top-4 w-20 h-10 bg-red-600 text-white text-xs flex items-center pr-4 rounded-r-xl justify-end"
+                  >
+                    20%
+                  </div>
+                </div>
+                <!-- info -->
+                <div class="p-4 flex flex-col bg-white">
+                  <h2
+                    class="title-color text-base font-medium mb-4 line-clamp-1"
+                  >
+                    جنگل آمازون
+                  </h2>
+                  <div class="flex h-12 mb-8">
+                    <h2
+                      class="title-color text-sm leading-6 font-normal line-clamp-2"
+                    >
+                      تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی
+                      از عجایب هفتگانه جهان است
+                    </h2>
+                  </div>
+                  <a
+                    href="#"
+                    class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="text-base font-medium"
+                      >مشاهده عکس های بیشتر</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="swiper-slide cursor-pointer border border-gray-300 rounded-2xl overflow-hidden flex flex-col group"
+                style="width: 20rem"
+              >
+                <div class="w-full relative pt-md">
+                  <img
+                    src="../utilites/img/slider1-4.jpg"
+                    alt="avatar"
+                    class="absolute inset-0 w-full h-full"
+                  />
+                  <div
+                    class="absolute group-hover:left-0 custom-transition -left-8 top-4 w-20 h-10 bg-red-600 text-white text-xs flex items-center pr-4 rounded-r-xl justify-end"
+                  >
+                    20%
+                  </div>
+                </div>
+                <!-- info -->
+                <div class="p-4 flex flex-col bg-white">
+                  <h2
+                    class="title-color text-base font-medium mb-4 line-clamp-1"
+                  >
+                    جنگل آمازون
+                  </h2>
+                  <div class="flex h-12 mb-8">
+                    <h2
+                      class="title-color text-sm leading-6 font-normal line-clamp-2"
+                    >
+                      تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی
+                      از عجایب هفتگانه جهان است
+                    </h2>
+                  </div>
+                  <a
+                    href="#"
+                    class="h-10 w-full flex-center border gap-2 border-gray-300 rounded-2xl text-gray-700 custom-transition hover:bg-purple-700 hover:text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="text-base font-medium"
+                      >مشاهده عکس های بیشتر</span
+                    >
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-  <!-- main ends -->
 
-  <!-- scripts -->
-  <!-- swiper script starts -->
-  <script src="../js/swiper-bundle.min.js"></script>
-  <script>
-    var top_swiper = new Swiper(".top_swiper", {
-      slidesPerView: 1,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-  <!-- swiper script ends -->
+      <!-- most visited -->
+      <div class="container flex flex-col gap-4 px-4 mb-10">
+        <h2 class="text-lg font-medium title-color">مکان های پر بازدید</h2>
+        <!-- cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="flex flex-col rounded-2xl overflow-hidden shadow-xl group"
+          >
+            <!-- img -->
+            <div class="relative w-full pt-md cursor-pointer">
+              <div class="absolute inset-0 overflow-hidden">
+                <img
+                  src="../utilites/img/slider1-2.jpg"
+                  class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in"
+                  alt="slide"
+                />
+              </div>
+              <div
+                class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in"
+              >
+                <a
+                  href="#"
+                  class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium"
+                  >ادامه مطلب</a
+                >
+              </div>
+            </div>
+            <!-- info -->
+            <div class="p-4 flex flex-col">
+              <h2 class="title-color text-base font-medium mb-4 line-clamp-1">
+                جنگل آمازون
+              </h2>
+              <div class="flex h-12 mb-8">
+                <h2
+                  class="title-color text-sm leading-6 font-normal line-clamp-2"
+                >
+                  تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی از
+                  عجایب هفتگانه جهان است
+                </h2>
+              </div>
+              <a href="#" class="flex text-purple-700 text-lg font-medium"
+                >ادامه مطلب ...</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col rounded-2xl overflow-hidden shadow-xl group"
+          >
+            <!-- img -->
+            <div class="relative w-full pt-md cursor-pointer">
+              <div class="absolute inset-0 overflow-hidden">
+                <img
+                  src="../utilites/img/slider1-2.jpg"
+                  class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in"
+                  alt="slide"
+                />
+              </div>
+              <div
+                class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in"
+              >
+                <a
+                  href="#"
+                  class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium"
+                  >ادامه مطلب</a
+                >
+              </div>
+            </div>
+            <!-- info -->
+            <div class="p-4 flex flex-col">
+              <h2 class="title-color text-base font-medium mb-4 line-clamp-1">
+                جنگل آمازون
+              </h2>
+              <div class="flex h-12 mb-8">
+                <h2
+                  class="title-color text-sm leading-6 font-normal line-clamp-2"
+                >
+                  تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی از
+                  عجایب هفتگانه جهان است
+                </h2>
+              </div>
+              <a href="#" class="flex text-purple-700 text-lg font-medium"
+                >ادامه مطلب ...</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col rounded-2xl overflow-hidden shadow-xl group"
+          >
+            <!-- img -->
+            <div class="relative w-full pt-md cursor-pointer">
+              <div class="absolute inset-0 overflow-hidden">
+                <img
+                  src="../utilites/img/slider1-2.jpg"
+                  class="w-full h-full group-hover:scale-125 transition-all duration-150 ease-in"
+                  alt="slide"
+                />
+              </div>
+              <div
+                class="absolute flex-center bg-gray-900 bg-opacity-50 inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in"
+              >
+                <a
+                  href="#"
+                  class="flex px-4 py-2 rounded-2xl bg-purple-700 text-white text-base font-medium"
+                  >ادامه مطلب</a
+                >
+              </div>
+            </div>
+            <!-- info -->
+            <div class="p-4 flex flex-col">
+              <h2 class="title-color text-base font-medium mb-4 line-clamp-1">
+                جنگل آمازون
+              </h2>
+              <div class="flex h-12 mb-8">
+                <h2
+                  class="title-color text-sm leading-6 font-normal line-clamp-2"
+                >
+                  تصویری که میبینید مربوط به جنگل های آمازون می باشد که یکی از
+                  عجایب هفتگانه جهان است
+                </h2>
+              </div>
+              <a href="#" class="flex text-purple-700 text-lg font-medium"
+                >ادامه مطلب ...</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- alpinejs click nav starts -->
-  <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
-  <script src="../js/alpinejs.min.js"></script>
-  <!-- alpinejs click nav ends -->
+      <!-- next section -->
+      <section class="bg-gray-200 p-4">
+        <div
+          class="bg-white flex flex-col rounded-2xl sm:max-w-[34rem] sm:mx-auto"
+        >
+          <!-- title -->
+          <div
+            class="flex-center w-full h-14 border-b border-style text-base title-color font-medium"
+          >
+            درخواست سفر
+          </div>
+          <!-- handle use numbers -->
+          <div x-data="handleMenu">
+            <div class="grid grid-cols-1 sm:grid-cols-2">
+              <div class="px-4 sm:py-6 sm:px-0">
+                <div
+                  class="py-6 border-b border-style sm:border-b-0 sm:border-r sm:py-0 sm:px-4"
+                >
+                  <h4 class="text-xs font-normal title-color mb-4">
+                    تعداد نفرات
+                  </h4>
+                  <div class="flex w-full gap-4">
+                    <div class="flex-1 relative">
+                      <input
+                        type="radio"
+                        name="users"
+                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        id="radio-one"
+                      />
+                      <label
+                        for="radio-one"
+                        class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent"
+                        >1</label
+                      >
+                    </div>
+                    <div class="flex-1 relative">
+                      <input
+                        type="radio"
+                        name="users"
+                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        id="radio-two"
+                      />
+                      <label
+                        for="radio-two"
+                        class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent"
+                        >2</label
+                      >
+                    </div>
+                    <div class="flex-1 relative">
+                      <input
+                        type="radio"
+                        name="users"
+                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        id="radio-three"
+                      />
+                      <label
+                        for="radio-three"
+                        class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent"
+                        >3</label
+                      >
+                    </div>
+                    <div class="flex-1 relative">
+                      <input
+                        type="radio"
+                        name="users"
+                        class="absolute radio-checked:bg-purple-700 radio-checked:text-white top-0 right-0 invisible"
+                        id="radio-four"
+                      />
+                      <label
+                        for="radio-four"
+                        class="w-full h-10 flex-center text-gray-700 font-medium text-xl transition-all duration-150 ease-out cursor-pointer shadow-xl border-2 border-purple-700 rounded-xl bg-transparent"
+                        >4</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="px-4 py-6">
+                <h4 class="text-xs font-normal title-color mb-4">
+                  نفرات دلخواه
+                </h4>
+                <div
+                  class="relative w-full text-gray-700 focus-within:text-purple-700 transition-colors"
+                >
+                  <input
+                    type="text"
+                    class="w-full h-10 pl-10 rounded-lg text-sm font-medium title-color border border-style focus:border-gray-300 focus:ring-0 transition-shadow ease-out focus:shadow-md"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 absolute top-2 left-2 right-auto bottom-auto"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="mx-4 border-b-2 border-dashed border-style"></div>
+            <!-- user info -->
+            <div class="grid grid-cols-1 px-4 pt-4 sm:px-0 sm:grid-cols-2">
+              <div
+                class="border-b border-style pb-4 sm:border-b-0 sm:border-r sm:px-4"
+              >
+                <h4 class="font-medium title-color text-base mb-4">
+                  اطلاعات شخصی
+                </h4>
+                <input
+                  type="text"
+                  class="w-full h-10 rounded-lg text-sm font-medium title-color border border-style focus:border-gray-300 focus:ring-0 transition-shadow ease-out focus:shadow-md mb-6"
+                  placeholder="نام"
+                />
+                <input
+                  type="text"
+                  class="w-full h-10 rounded-lg text-sm font-medium title-color border border-style focus:border-gray-300 focus:ring-0 transition-shadow ease-out focus:shadow-md mb-6"
+                  placeholder="نام خانوادگی"
+                />
+                <input
+                  type="email"
+                  class="w-full h-10 rounded-lg text-sm font-medium title-color border border-style focus:border-gray-300 focus:ring-0 transition-shadow ease-out focus:shadow-md mb-6 invalid:border-red-500 valid:border-green-500 peer"
+                  placeholder="login@gmail.com"
+                />
+                <p
+                  class="invisible text-xs font-normal text-red-500 peer-invalid:visible"
+                >
+                  this type of email is invalid
+                </p>
+                <div class="flex items-center gap-8">
+                  <h4 class="text-sm font-medium title-color">جنسیت</h4>
+                  <div class="flex items-center gap-4 cursor-pointer">
+                    <input
+                      type="radio"
+                      class="focus:ring-0 focus:ring-offset-0"
+                      name="gender"
+                      id="male"
+                    />
+                    <label for="male" class="text-sm font-medium title-color"
+                      >آقا</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-4 cursor-pointer">
+                    <input
+                      type="radio"
+                      class="focus:ring-0 focus:ring-offset-0"
+                      name="gender"
+                      id="female"
+                    />
+                    <label for="female" class="text-sm font-medium title-color"
+                      >خانم</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Payment Method -->
+              <div class="pt-4 sm:pt-0 sm:px-4">
+                <h4 class="font-medium title-color text-base mb-4">
+                  روش پرداخت
+                </h4>
+                <select
+                  class="w-full h-10 mb-4 rounded-lg text-sm font-medium title-color border border-style focus:border-gray-300 focus:ring-0 transition-shadow ease-out focus:shadow-md"
+                >
+                  <option value="1">بانک ملت</option>
+                  <option value="2">بانک تجارت</option>
+                  <option value="3">بانک ملی</option>
+                </select>
 
-  <!-- alpinejs click nav starts -->
-  <script>
-    var places_to_visit = new Swiper(".places_to_visit", {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      // breakpoints: {
-      //   300:{
-      //     slidesPerView: 'auto',
-      //   },
-      //   640: {
-      //     slidesPerView: 2,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3,
-      //   }
-      // }
-    })
-  </script>
-  <!-- alpinejs click nav ends -->
+                <h4 class="text-sm font-medium title-color mb-4">
+                  از طرح های تخفیف بعدی با خبرم کن
+                </h4>
+                <div class="flex items-center gap-8">
+                  <div class="flex items-center gap-4 cursor-pointer">
+                    <input
+                      type="radio"
+                      class="focus:ring-0 focus:ring-offset-0"
+                      name="discount"
+                      id="yes"
+                    />
+                    <label for="yes" class="text-sm font-medium title-color"
+                      >بله</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-4 cursor-pointer">
+                    <input
+                      type="radio"
+                      class="focus:ring-0 focus:ring-offset-0"
+                      name="discount"
+                      id="no"
+                    />
+                    <label for="no" class="text-sm font-medium title-color"
+                      >خیر</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- button -->
+            <div class="flex px-4 py-8">
+              <button
+                x-on:click="handleOpenMenu()"
+                class="rounded-2xl bg-yellow-500 text-gray-700 w-full sm:w-auto sm:px-6 h-12 flex items-center gap-4 justify-center text-lg font-medium"
+              >
+                <span x-text="goNext?'صبر کنید':'مرحله بعد'"></span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x-show="!goNext"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 hidden sm:block"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg>
+                <!-- <svg
+                x-show="openMenu"
+                x-cloak
+                class="animate-spin h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg> -->
 
-</body>
+                <svg
+                  x-show="goNext"
+                  x-cloak
+                  width="32"
+                  height="32"
+                  viewBox=" 0 0 44 44 "
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#fff"
+                >
+                  <g fill="none" fill-rule="evenodd" stroke-width="2">
+                    <circle cx="22" cy="22" r="1">
+                      <animate
+                        attributeName="r"
+                        begin="0s"
+                        dur="1.8s"
+                        values="1; 20"
+                        calcMode="spline"
+                        keyTime="0; 1"
+                        keySplines="0.165,0.84,0.44,1"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="stroke-opacity"
+                        begin="0s"
+                        dur="1.8s"
+                        values="1; 0"
+                        calcMode="spline"
+                        keyTime="0; 1"
+                        keySplines="0.3,0.61,0.355,1"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
 
+                    <circle cx="22" cy="22" r="1">
+                      <animate
+                        attributeName="r"
+                        begin="-0.9s"
+                        dur="1.8s"
+                        values="1; 20"
+                        calcMode="spline"
+                        keyTime="0; 1"
+                        keySplines="0.165,0.84,0.44,1"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="stroke-opacity"
+                        begin="-0.9s"
+                        dur="1.8s"
+                        values="1; 0"
+                        calcMode="spline"
+                        keyTime="0; 1"
+                        keySplines="0.3,0.61,0.355,1"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <!-- menu layer -->
+            <div 
+            x-on:click="handleCloseMenu()"
+              class="fixed inset-0 bg-gray-900 bg-opacity-50 z-10"
+              x-show="openMenu"
+              x-cloak
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 "
+              x-transition:enter-end="opacity-100 "
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-start="opacity-100 "
+              x-transition:leave-end="opacity-0 "
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main ends -->
+
+    <!-- scripts -->
+    <!-- swiper script starts -->
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script>
+      var top_swiper = new Swiper(".top_swiper", {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <!-- swiper script ends -->
+
+    <!-- alpinejs click nav starts -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="../js/alpinejs.min.js"></script>
+    <!-- alpinejs click nav ends -->
+
+    <!-- alpinejs click nav starts -->
+    <script>
+      var places_to_visit = new Swiper(".places_to_visit", {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        // breakpoints: {
+        //   300:{
+        //     slidesPerView: 'auto',
+        //   },
+        //   640: {
+        //     slidesPerView: 2,
+        //   },
+        //   1024: {
+        //     slidesPerView: 3,
+        //   }
+        // }
+      });
+    </script>
+    <!-- alpinejs click nav ends -->
+    <!-- menu layer -->
+    <script>
+      function handleMenu() {
+        return {
+          goNext: false,
+          openMenu: false,
+          handleOpenMenu() {
+            this.goNext = true;
+            setTimeout(() => {
+              this.openMenu = true;
+            }, 2000);
+          },
+          handleCloseMenu() {
+            this.goNext = false;
+            this.openMenu = false;
+          },
+        };
+      }
+    </script>
+  </body>
 </html>
