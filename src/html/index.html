@@ -181,7 +181,56 @@
     <div class="fixed inset-0 bg-gray-900 bg-opacity-60 z-10 backdrop-blur-sm" x-show="openNavbar" x-cloak></div>
     <!-- menu items -->
     <div class="fixed inset-y-0 left-0 right-auto w-64 z-20 bg-gray-100" x-show="openNavbar" x-cloak>
-      <div class="p-4 flex flex-col text-base font-medium"></div>
+      <div class="p-4 flex flex-col text-base font-medium title-color gap-4">
+        <a href="#">خانه</a>
+        <!-- inside tour -->
+        <div class="flex flex-col ">
+          <div class="flex  items-center justify-between cursor-pointer" x-on:click="firsLeveMenu(2)">
+            <span>تور های داخلی</span>
+            <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="{'rotate-90':menuTab == 2}" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 transition-all">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </div>
+          <!-- sub menu -->
+          <div class="pl-4 overflow-hidden transition-all " x-bind:class="menuTab==2?'max-h-96':'max-h-0'">
+            <div class="flex flex-col gap-4 pt-4">
+              <a href="#">کیش</a>
+              <!-- sub sub menu -->
+              <div>
+                <div x-on:click="subMenuTab=1" class="flex items-center justify-between cursor-pointer">
+                  <span>کوهنوردی</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="{'rotate-90':subMenuTab==1}" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 transition-all">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                  </svg>
+                </div>
+                <div class="pl-4 transition-all overflow-hidden" x-bind:class="subMenuTab == 1?'max-h-96':'max-h-0'">
+                  <div class="flex flex-col gap-4 pt-4">
+                    <a href="#">البرز</a>
+                    <a href="#">زاگرس</a>
+                    <a href="#">بینالود</a>
+                  </div>
+                </div>
+              </div>
+              <a href="#">قشم</a>
+              <a href="#">اصفهان</a>
+            </div>
+          </div>
+        </div>
+        <!-- outside tour -->
+        <div>
+          <div x-on:click="firsLeveMenu(3) " class="flex  items-center justify-between cursor-pointer">
+            <span>تور های خارجی</span>
+            <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="{'rotate-90':menuTab==3}" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 transition-all">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </div>
+        </div>
+        <a href="#">مجله</a>
+        <a href="#">افتخارات</a>
+      </div>
     </div>
   </nav>
   <!-- navBar ends -->
@@ -1083,6 +1132,11 @@
     function handelMobileMenu() {
       return {
         openNavbar: false,
+        menuTab: 0,
+        subMenuTab: 0,
+        firsLeveMenu(index) {
+          this.menuTab = index
+        },
         handleOpenNavbar() {
           this.openNavbar = true
           document.body.classList.add('scroll-fixed')
