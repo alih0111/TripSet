@@ -727,10 +727,6 @@ select {
   overflow: hidden;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .invisible {
   visibility: hidden;
 }
@@ -841,6 +837,10 @@ select {
 
 .right-4 {
   right: 1rem;
+}
+
+.-left-96 {
+  left: -24rem;
 }
 
 .z-10 {
@@ -1245,6 +1245,18 @@ select {
 
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
+
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
 }
 
 .p-2 {
